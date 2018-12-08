@@ -1,0 +1,28 @@
+Private Sub Command1_Click()
+Dim a As Single, b As Single, c As Single
+Dim D As Single, X1 As Single, X2 As Single
+Dim R As Single, P As Single
+a = Val(Text1.Text)                                '取数据a
+b = Val(Text2.Text)                                '取数据b
+c = Val(Text3.Text)                                '取数据c
+If  a = 0   Then                                   '当a=0
+  Text4.Text = "不是二次方程"
+  Text5.Text = "不是二次方程"
+Else                                               'a<>0
+  D = b * b - 4 * a * c
+  R = -b / (2 * a)
+If   D = 0   Then                                  'D=0
+  Text4.Text = R
+  Text5.Text = R
+ElseIf D > 0 Then                                  'D>0
+  X1 = (-b + Sqr(D)) / (2 * a)
+  X2 = (-b - Sqr(D)) / (2 * a)
+  Text4.Text = X1
+  Text5.Text = X2
+Else                                                'D<0
+  P = Sqr(-D) / (2 * a)
+  Text4.Text = R & "+" & P & "i"
+  Text5.Text = R & "-" & P & "i"
+End If
+End If
+End Sub
